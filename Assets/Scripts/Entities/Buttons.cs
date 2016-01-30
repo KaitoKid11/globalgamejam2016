@@ -24,9 +24,6 @@ public class Buttons : MonoBehaviour {
     private System.Random _random;
     private int _speed;
     private KeyCode _buttonToPush;
-    private ButtonDetection _buttonDetection;
-    private LifeAndScoreManager _lifeAndScoreManager;
-
 
 	// Use this for initialization
     void Start()
@@ -43,7 +40,7 @@ public class Buttons : MonoBehaviour {
     {
         if (Input.GetKeyDown(_buttonToPush))
         {
-            _buttonDetection.buttonDown(gameObject);
+            ButtonDetection.Instance.buttonDown(gameObject);
         }
 	}
 
@@ -65,7 +62,7 @@ public class Buttons : MonoBehaviour {
 
     public void doDamage()
     {
-        _lifeAndScoreManager.inflictDamage(_damage);
+        LifeAndScoreManager.Instance.inflictDamage(_damage);
     }
 
     private KeyCode buttonEnumToKeyCode(BUTTONS_TO_PUSH button)

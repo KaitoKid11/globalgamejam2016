@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LifeAndScoreManager : MonoBehaviour {
+public class LifeAndScoreManager : Singleton<LifeAndScoreManager>
+{
 
 	// Use this for initialization
 	void Start () {
@@ -12,4 +13,9 @@ public class LifeAndScoreManager : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void inflictDamage(int damage)
+    {
+
+    }
 }
