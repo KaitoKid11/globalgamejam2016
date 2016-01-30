@@ -364,6 +364,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1291243065}
   - 114: {fileID: 1291243064}
+  - 114: {fileID: 1291243066}
   m_Layer: 0
   m_Name: MainManager
   m_TagString: Untagged
@@ -383,7 +384,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnTime: 1
-  _launchButton: {fileID: 192580, guid: 80676ec12c2a1bc4696c8b71d9779ee3, type: 2}
+  _launchButton: {fileID: 104754, guid: 58023404cf7525e4292cb7242ea0c1ed, type: 2}
+  _isActive: 1
 --- !u!4 &1291243065
 Transform:
   m_ObjectHideFlags: 0
@@ -396,6 +398,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1291243066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1291243063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf8f03ca93195d24db657c88769f052d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeVelocityArray:
+  - time: 0
+    velocity: 10
+  - time: 5
+    velocity: 5
+  - time: 10
+    velocity: 1
 --- !u!1 &1599926887
 GameObject:
   m_ObjectHideFlags: 0

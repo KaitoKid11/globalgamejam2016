@@ -33,8 +33,9 @@ public class ButtonGenerator : Singleton<ButtonGenerator> {
     //Prefab to launch
     public GameObject _launchButton;
 
-    //The velocity which the generated buttons must have
-    public float _velocity;
+    //Indicates if the generator must generate buttons
+    [SerializeField]
+    private bool _isActive;
 
     // Use this for initialization
     void Start () {
@@ -56,7 +57,7 @@ public class ButtonGenerator : Singleton<ButtonGenerator> {
 	void Update () {
         //Debug.Log(generateRandomNumber(_upLeft.transform.position.y,_downLeft.transform.position.y));
 
-        if(_acumulatedTime < Time.time)
+        if(_isActive & _acumulatedTime < Time.time)
         {
             generateButton();
             _acumulatedTime += _spawnTime;
@@ -80,6 +81,8 @@ public class ButtonGenerator : Singleton<ButtonGenerator> {
         // 1 -> Right
         int side = _random.NextDouble() >= 0.5 ? 1 : 0;
 
+        //Launch the button depending on the side
+
         if ((Side)side == Side.Left)
         {
             double auxPosition = generateRandomNumber(_upLeft.transform.position.y, _downLeft.transform.position.y);
@@ -91,7 +94,22 @@ public class ButtonGenerator : Singleton<ButtonGenerator> {
             double auxPosition = generateRandomNumber(_upRight.transform.position.y, _downRight.transform.position.y);
             Vector3 positionLaunch = new Vector3(_upRight.transform.position.x, (float)auxPosition, 0);
             GameObject button = (GameObject)Instantiate(_launchButton, positionLaunch, Quaternion.identity);
-            button.GetComponent<ButtonMovement>()._velocity = _velocity;
         }
     } 
+
+    /// <summary>
+    /// Start to spawn buttons.
+    /// </summary>
+    public void startSpawn()
+    {
+        _isActive = true;
+    }
+
+    /// <summary>
+    /// Stop to spawn buttons.
+    /// </summary>
+    public void stopSpawn()
+    {
+        _isActive = true;
+    }
 }

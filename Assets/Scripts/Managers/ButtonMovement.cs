@@ -1,19 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Component that managers the movement of the button.
+/// </summary>
 public class ButtonMovement : MonoBehaviour {
 
-    public float _velocity;
+    
+    // Current movement of the button.
+    private float _velocity;
 
+    // The position that the button has to move to.
     private GameObject _target;
-
-    private Rigidbody2D _body;
 
 	// Use this for initialization
 	void Start () {
         _target = GameObject.FindGameObjectWithTag("Target");
 
-        _velocity = 1;
+        _velocity = VelocityManager.Instance.getVelocity();
     }
 	
 	// Update is called once per frame
