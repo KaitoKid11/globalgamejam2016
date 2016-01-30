@@ -13,10 +13,15 @@ public class VelocityManager : Singleton<VelocityManager> {
         public float time;
         [SerializeField]
         public float velocity;
+        [SerializeField]
+        public Movement movement;
     }
 
-    /// Velocity that the buttons have when launched
+    // Velocity that the buttons have when launched
     private float _velocity;
+
+    // Current button movement
+    private Movement _movement;
 
     // Array that has a pair time velocity
     [SerializeField]
@@ -41,6 +46,7 @@ public class VelocityManager : Singleton<VelocityManager> {
             if (_timeVelocityArray[_currentVelocityIndex].time < Time.time)
             {
                 _velocity = _timeVelocityArray[_currentVelocityIndex].velocity;
+                _movement = _timeVelocityArray[_currentVelocityIndex].movement;
                 ++_currentVelocityIndex;
             }
         } 
@@ -53,5 +59,14 @@ public class VelocityManager : Singleton<VelocityManager> {
     public float getVelocity()
     {
         return _velocity;
+    }
+
+    /// <summary>
+    /// Get the button movement.
+    /// </summary>
+    /// <returns></returns>
+    public Movement getMovement()
+    {
+        return _movement;
     }
 }

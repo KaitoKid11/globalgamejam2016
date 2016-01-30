@@ -405,9 +405,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -501,7 +499,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnTime: 2
   _launchButton: {fileID: 104754, guid: 58023404cf7525e4292cb7242ea0c1ed, type: 2}
-  _isActive: 1
   _maxOneSideCounter: 3
 --- !u!4 &1291243065
 Transform:
@@ -529,10 +526,7 @@ MonoBehaviour:
   _timeVelocityArray:
   - time: 0
     velocity: 1
-  - time: 15
-    velocity: 3
-  - time: 50
-    velocity: 7
+    movement: 1
 --- !u!4 &1326170281 stripped
 Transform:
   m_PrefabParentObject: {fileID: 448780, guid: 2c37eeb0344b6704fb0f43b940e504aa, type: 2}
