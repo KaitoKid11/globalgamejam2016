@@ -15,12 +15,13 @@ public class LifeAndScoreManager : Singleton<LifeAndScoreManager>
 	void Update () {
 	    if(_playerLife <= 0)
         {
-            //CAMBIAR ESTADO A GAMEOVER
+            GameState.Instance.changeState(GameState.GAME_STATES.GAME_STATE_GAME_OVER);
         }
 	}
 
     public void inflictDamage(GameObject button)
     {
         _playerLife -= button.GetComponent<Buttons>()._damage;
+        Destroy(button);
     }
 }

@@ -320,6 +320,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5827436, guid: d5b93cba8da4d48488805249740a90c2, type: 2}
+      propertyPath: m_Radius
+      value: .100000001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5b93cba8da4d48488805249740a90c2, type: 2}
   m_IsPrefabParent: 0
@@ -501,7 +505,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnTime: 2
   _launchButton: {fileID: 104754, guid: 58023404cf7525e4292cb7242ea0c1ed, type: 2}
-  _isActive: 1
   _maxOneSideCounter: 3
 --- !u!4 &1291243065
 Transform:

@@ -79,6 +79,8 @@ public class ButtonGenerator : Singleton<ButtonGenerator> {
         _acumulatedTime = _spawnTime;
 
         _currentSideCounter = 0;
+
+        _isActive = true;
     }
 	
 	/// <summary>
