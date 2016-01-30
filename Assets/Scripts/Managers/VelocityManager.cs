@@ -33,7 +33,7 @@ public class VelocityManager : Singleton<VelocityManager> {
 	// Update is called once per frame
 	void Update () {
 
-        Debug.Log("Time: " + Time.time + " Velocity: " + _velocity);
+        //Debug.Log("Time: " + Time.time + " Velocity: " + _velocity);
 
         if(_currentVelocityIndex < _timeVelocityArray.Length)
         {

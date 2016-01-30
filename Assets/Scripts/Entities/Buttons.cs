@@ -19,9 +19,20 @@ public class Buttons : MonoBehaviour {
 
     public GameObject _target;
     public int _maxKeys;
+
+    public Sprite W;
+    public Sprite A;
+    public Sprite S;
+    public Sprite D;
+    public Sprite Up;
+    public Sprite Left;
+    public Sprite Down;
+    public Sprite Right;
+
     //PARA FUTURAS PRUEBAS DE DESARROLLADORES
-    //public int _speed;
     public int _damage = 10;
+    //public int _speed;
+    
 
     private System.Random _random;
     private int _speed;
@@ -35,6 +46,7 @@ public class Buttons : MonoBehaviour {
         _inDeathAux = false;
         _random = new System.Random();
         _buttonToPush = buttonEnumToKeyCode((BUTTONS_TO_PUSH)_random.Next(0, _maxKeys - 1));
+        setSpriteToButton(_buttonToPush);
 	}
 	
 	// Update is called once per frame
@@ -50,7 +62,7 @@ public class Buttons : MonoBehaviour {
         }
 	}
 
-    void OnTriggerEnter(Collider zone)
+    void OnTriggerEnter2D(Collider2D zone)
     {
         switch (zone.gameObject.name)
         {
@@ -96,5 +108,35 @@ public class Buttons : MonoBehaviour {
                 return KeyCode.RightArrow;
         }
         return KeyCode.PageDown;
+    }
+    private void setSpriteToButton(KeyCode button)
+    {
+        switch(button)
+        {
+            case KeyCode.W:
+                gameObject.GetComponent<SpriteRenderer>().sprite = W;
+                break;
+            case KeyCode.A:
+                gameObject.GetComponent<SpriteRenderer>().sprite = A;
+                break;
+            case KeyCode.S:
+                gameObject.GetComponent<SpriteRenderer>().sprite = S;
+                break;
+            case KeyCode.D:
+                gameObject.GetComponent<SpriteRenderer>().sprite = D;
+                break;
+            case KeyCode.UpArrow:
+                gameObject.GetComponent<SpriteRenderer>().sprite = Up;
+                break;
+            case KeyCode.LeftArrow:
+                gameObject.GetComponent<SpriteRenderer>().sprite = Left;
+                break;
+            case KeyCode.DownArrow:
+                gameObject.GetComponent<SpriteRenderer>().sprite = Down;
+                break;
+            case KeyCode.RightArrow:
+                gameObject.GetComponent<SpriteRenderer>().sprite = Right;
+                break;
+        }
     }
 }
