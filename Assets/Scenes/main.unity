@@ -383,9 +383,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cd7d8164b02aa64ba5ea129d12bb746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnTime: 1
+  _spawnTime: 2
   _launchButton: {fileID: 104754, guid: 58023404cf7525e4292cb7242ea0c1ed, type: 2}
   _isActive: 1
+  _maxOneSideCounter: 3
 --- !u!4 &1291243065
 Transform:
   m_ObjectHideFlags: 0

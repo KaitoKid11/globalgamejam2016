@@ -34,8 +34,36 @@ public class ButtonGenerator : Singleton<ButtonGenerator> {
     public GameObject _launchButton;
 
     //Indicates if the generator must generate buttons
-    [SerializeField]
     private bool _isActive;
+
+    //Property to change the active status
+    public bool Active
+    {
+        get
+        {
+            return _isActive;
+        }
+
+        set
+        {
+            if(value == true)
+            {
+                _acumulatedTime = Time.time + _spawnTime;
+            }
+
+            _isActive = value;
+        }
+    }
+
+    //Indicates when to launch one side force launch
+    [SerializeField]
+    private int _maxOneSideCounter;
+
+    //Indicates how many times a button has spawned in one side
+    private int _currentSideCounter;
+
+    //The previous side launch
+    private Side _previousSide;
 
     // Use this for initialization
     void Start () {
@@ -49,6 +77,8 @@ public class ButtonGenerator : Singleton<ButtonGenerator> {
         _random = new System.Random();
 
         _acumulatedTime = _spawnTime;
+
+        _currentSideCounter = 0;
     }
 	
 	/// <summary>
@@ -79,11 +109,36 @@ public class ButtonGenerator : Singleton<ButtonGenerator> {
         //Generate a side where the button is going to be thrown (0 or 1)
         // 0 -> Left
         // 1 -> Right
-        int side = _random.NextDouble() >= 0.5 ? 1 : 0;
+        int side = 0;
+            
+            //_random.NextDouble() >= 0.5 ? 1 : 0;
+
+        Side currentSide = (Side)side;
+
+        //Debug.Log("Side: " + currentSide + " Previous side: " + _previousSide);
+        //Debug.Log("Current Side Counter: " + _currentSideCounter + " Max Current Side Counter: " + _maxOneSideCounter);
+
+        //Check if the thrown side is the same as before
+        if (currentSide == _previousSide)
+        {
+            _currentSideCounter++;
+
+            if (_currentSideCounter > _maxOneSideCounter)
+            {
+                //Swap side
+
+                if (currentSide == Side.Left)
+                    currentSide = Side.Right;
+                else if(currentSide == Side.Right)
+                    currentSide = Side.Left;
+
+                _currentSideCounter = 0;
+            }
+        }
 
         //Launch the button depending on the side
 
-        if ((Side)side == Side.Left)
+        if (currentSide == Side.Left)
         {
             double auxPosition = generateRandomNumber(_upLeft.transform.position.y, _downLeft.transform.position.y);
             Vector3 positionLaunch = new Vector3(_upLeft.transform.position.x, (float)auxPosition, 0);
@@ -95,6 +150,8 @@ public class ButtonGenerator : Singleton<ButtonGenerator> {
             Vector3 positionLaunch = new Vector3(_upRight.transform.position.x, (float)auxPosition, 0);
             GameObject button = (GameObject)Instantiate(_launchButton, positionLaunch, Quaternion.identity);
         }
+
+        _previousSide = currentSide;
     } 
 
     /// <summary>
