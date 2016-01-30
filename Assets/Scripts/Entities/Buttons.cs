@@ -14,13 +14,15 @@ public class Buttons : MonoBehaviour {
     public bool _inDeath;
     [HideInInspector]
     public bool _inDeathAux;
+    [HideInInspector]
+    public bool _fail;
+
     public GameObject _target;
     public int _maxKeys;
     //PARA FUTURAS PRUEBAS DE DESARROLLADORES
     //public int _speed;
-    //public int _damage;
+    public int _damage = 10;
 
-    private int _damage = 10;
     private System.Random _random;
     private int _speed;
     private KeyCode _buttonToPush;
@@ -42,6 +44,10 @@ public class Buttons : MonoBehaviour {
         {
             ButtonDetection.Instance.buttonDown(gameObject);
         }
+        if (_fail)
+        {
+            doDamage();
+        }
 	}
 
     void OnTriggerEnter(Collider zone)
@@ -57,12 +63,15 @@ public class Buttons : MonoBehaviour {
             case "DeathAuxZone":
                 _inDeathAux = true;
                 break;
+            case "Target":
+                _fail = true;
+                break;
         }
     }
 
     public void doDamage()
     {
-        LifeAndScoreManager.Instance.inflictDamage(_damage);
+        LifeAndScoreManager.Instance.inflictDamage(gameObject);
     }
 
     private KeyCode buttonEnumToKeyCode(BUTTONS_TO_PUSH button)
