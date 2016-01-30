@@ -32,6 +32,8 @@ public class ButtonGenerator : Singleton<ButtonGenerator> {
     private float _spawnTime;
     //Acumulated time
     private float _acumulatedTime = 0;
+    //Time when the scene was activated
+    private float _timeZero;
 
     //Prefab to launch
     public GameObject _launchButton;
@@ -84,6 +86,8 @@ public class ButtonGenerator : Singleton<ButtonGenerator> {
         _currentSideCounter = 0;
 
         _isActive = true;
+
+        _timeZero = Time.time;
     }
 	
 	/// <summary>
@@ -92,7 +96,7 @@ public class ButtonGenerator : Singleton<ButtonGenerator> {
 	void Update () {
         //Debug.Log(generateRandomNumber(_upLeft.transform.position.y,_downLeft.transform.position.y));
 
-        if(_isActive & _acumulatedTime < Time.time)
+        if(_isActive & _acumulatedTime < (Time.time - _timeZero))
         {
             generateButton();
             _acumulatedTime += _spawnTime;

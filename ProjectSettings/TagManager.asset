@@ -9,6 +9,8 @@ TagManager:
   - DownLeft
   - DownRight
   - Target
+  - PlayerLife
+  - ComboNumberText
   layers:
   - Default
   - TransparentFX
