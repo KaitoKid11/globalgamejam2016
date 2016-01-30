@@ -15,7 +15,11 @@ public class LifeAndScoreManager : Singleton<LifeAndScoreManager>
     StreamWriter _sr;
 
     //UIElements
-    GameObject _playerLifeSlider;
+    private GameObject _playerLifeSlider;
+    private GameObject _comboNumberText;
+    private GameObject _scoreNumber;
+
+    public int _combo;
 
     // Use this for initialization
     void Start() {
@@ -24,6 +28,10 @@ public class LifeAndScoreManager : Singleton<LifeAndScoreManager>
         createDirectory();
         createFile();
         _playerLifeSlider = GameObject.FindGameObjectWithTag("PlayerLife");
+
+        _comboNumberText = GameObject.FindGameObjectWithTag("ComboNumberText");
+
+        _combo = 0;
 
         _playerLife = 100;
     }
@@ -43,6 +51,8 @@ public class LifeAndScoreManager : Singleton<LifeAndScoreManager>
         
         Slider slider = _playerLifeSlider.GetComponent<Slider>();
         slider.value = _playerLife;
+        ButtonDetection.Instance._combo = 0;
+        _comboNumberText.GetComponent<Text>().text = _combo.ToString();
         Destroy(button);
     }
 

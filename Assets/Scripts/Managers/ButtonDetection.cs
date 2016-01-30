@@ -5,12 +5,15 @@ using System.Collections;
 public class ButtonDetection : Singleton<ButtonDetection> {
 
     private GameObject _comboNumberText;
+    private GameObject _scoreNumberText;
 
-    private int _combo;
+    public int _combo;
 
     void Start()
     {
         _comboNumberText = GameObject.FindGameObjectWithTag("ComboNumberText");
+
+        _scoreNumberText = GameObject.FindGameObjectWithTag("ScoreNumberText");
 
         _combo = 0;
     }
@@ -28,6 +31,11 @@ public class ButtonDetection : Singleton<ButtonDetection> {
                 ++_combo;
                 _comboNumberText.GetComponent<Text>().text = _combo.ToString();
                 //LLAMAR A MANAGER PUNTUACIÓN Y AÑADIR PUNTOS
+
+                LifeAndScoreManager.Instance._playerScore += 100;
+
+                _scoreNumberText.GetComponent<Text>().text = LifeAndScoreManager.Instance._playerScore.ToString();
+
                 Destroy(button);
             }
         }
