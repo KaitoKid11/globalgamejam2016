@@ -16,10 +16,9 @@ public class LifeAndScoreManager : Singleton<LifeAndScoreManager>
 
     //UIElements
     GameObject _playerLifeSlider;
-    GameObject _playerLifeUI;
 
     // Use this for initialization
-    void Start () {
+    void Start() {
 
         //Hoghscore File
         createDirectory();
@@ -33,14 +32,18 @@ public class LifeAndScoreManager : Singleton<LifeAndScoreManager>
 	void Update () {
 	    if(_playerLife <= 0)
         {
-            //CAMBIAR ESTADO A GAMEOVER
+            GameState.Instance.changeState(GameState.GAME_STATES.GAME_STATE_GAME_OVER);
         }
 	}
 
     public void inflictDamage(GameObject button)
     {
         _playerLife -= button.GetComponent<Buttons>()._damage;
-        _playerLifeUI.GetComponent<Slider>().value = _playerLife;
+
+        
+        Slider slider = _playerLifeSlider.GetComponent<Slider>();
+        slider.value = _playerLife;
+        Destroy(button);
     }
 
     void createDirectory()
@@ -60,10 +63,12 @@ public class LifeAndScoreManager : Singleton<LifeAndScoreManager>
 
     StreamWriter createFile()
     {
+        
         _fileName = _directory + "/highscore.txt";
 
         StreamWriter sr = null;
 
+        /*
         if (File.Exists(_fileName))
         {
             Debug.LogWarning("WARNING!! The file " + _fileName + " already exists. Opening it.");
@@ -76,6 +81,7 @@ public class LifeAndScoreManager : Singleton<LifeAndScoreManager>
         }
 
         writeUserData("User Daniel, Score 1000");
+        */
 
         return sr;
     }

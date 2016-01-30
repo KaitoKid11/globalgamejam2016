@@ -59,6 +59,7 @@ public class Buttons : MonoBehaviour {
         if (_fail)
         {
             doDamage();
+            _fail = false;
         }
 	}
 
