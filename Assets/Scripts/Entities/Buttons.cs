@@ -69,11 +69,13 @@ public class Buttons : MonoBehaviour {
         {
             case "DetectionZone":
                 _inDetection = true;
+                GameObject.FindGameObjectWithTag("BrightCircle").GetComponent<SpriteRenderer>().enabled = true;
                 break;
             case "DeathZone":
                 _inDeath = true;
                 break;
             case "DeathAuxZone":
+                GameObject.FindGameObjectWithTag("BrightCircle").GetComponent<SpriteRenderer>().enabled = false;
                 _inDeathAux = true;
                 break;
             case "Target":

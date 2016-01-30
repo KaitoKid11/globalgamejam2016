@@ -1,10 +1,14 @@
 fileFormatVersion: 2
-guid: a25e8153fa5a13149be49d561fa38636
-timeCreated: 1454177560
+guid: 66006bc242a6e7947a14b4f257d1007b
+timeCreated: 1454179658
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Asvg_0
+    21300000: spritesheetFiresvg_0
+    21300002: spritesheetFiresvg_1
+    21300004: spritesheetFiresvg_2
+    21300006: spritesheetFiresvg_3
+    21300008: spritesheetFiresvg_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -51,13 +55,53 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Asvg_0
+    - name: spritesheetFiresvg_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 220
+        width: 115
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spritesheetFiresvg_1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 176
+        width: 115
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spritesheetFiresvg_2
       rect:
         serializedVersion: 2
         x: 0
+        y: 88
+        width: 119
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spritesheetFiresvg_3
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 44
+        width: 115
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spritesheetFiresvg_4
+      rect:
+        serializedVersion: 2
+        x: 2
         y: 0
-        width: 111
-        height: 109
+        width: 116
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

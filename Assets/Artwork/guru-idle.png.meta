@@ -1,0 +1,287 @@
+fileFormatVersion: 2
+guid: 8c505e2e8c861a94ba9e7a7a9d1280c2
+timeCreated: 1454186191
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: guru-idle_0
+    21300002: guru-idle_1
+    21300004: guru-idle_2
+    21300006: guru-idle_3
+    21300008: guru-idle_4
+    21300010: guru-idle_5
+    21300012: guru-idle_6
+    21300014: guru-idle_7
+    21300016: guru-idle_8
+    21300018: guru-idle_9
+    21300020: guru-idle_10
+    21300022: guru-idle_11
+    21300024: guru-idle_12
+    21300026: guru-idle_13
+    21300028: guru-idle_14
+    21300030: guru-idle_15
+    21300032: guru-idle_16
+    21300034: guru-idle_17
+    21300036: guru-idle_18
+    21300038: guru-idle_19
+    21300040: guru-idle_20
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: guru-idle_0
+      rect:
+        serializedVersion: 2
+        x: 1939
+        y: 158
+        width: 942
+        height: 964
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guru-idle_1
+      rect:
+        serializedVersion: 2
+        x: 2477
+        y: 1057
+        width: 25
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guru-idle_2
+      rect:
+        serializedVersion: 2
+        x: 2590
+        y: 1104
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guru-idle_3
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 264
+        width: 887
+        height: 936
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guru-idle_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 910
+        height: 991
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guru-idle_5
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 983
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guru-idle_6
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 0
+        width: 865
+        height: 1036
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guru-idle_7
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 854
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guru-idle_8
+      rect:
+        serializedVersion: 2
+        x: 2096
+        y: 809
+        width: 21
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guru-idle_9
+      rect:
+        serializedVersion: 2
+        x: 1053
+        y: 760
+        width: 66
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guru-idle_10
+      rect:
+        serializedVersion: 2
+        x: 1822
+        y: 737
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guru-idle_11
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 715
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guru-idle_12
+      rect:
+        serializedVersion: 2
+        x: 1850
+        y: 684
+        width: 119
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guru-idle_13
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 616
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guru-idle_14
+      rect:
+        serializedVersion: 2
+        x: 3906
+        y: 582
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guru-idle_15
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 254
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guru-idle_16
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 244
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guru-idle_17
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 170
+        width: 4
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guru-idle_18
+      rect:
+        serializedVersion: 2
+        x: 1863
+        y: 35
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guru-idle_19
+      rect:
+        serializedVersion: 2
+        x: 2906
+        y: 158
+        width: 37
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guru-idle_20
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 107
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -32,6 +32,8 @@ public class ButtonDetection : Singleton<ButtonDetection> {
                 _comboNumberText.GetComponent<Text>().text = _combo.ToString();
                 //LLAMAR A MANAGER PUNTUACIÓN Y AÑADIR PUNTOS
 
+                GameObject.FindGameObjectWithTag("BrightCircle").GetComponent<SpriteRenderer>().enabled = false;
+
                 LifeAndScoreManager.Instance._playerScore += 100;
 
                 _scoreNumberText.GetComponent<Text>().text = LifeAndScoreManager.Instance._playerScore.ToString();

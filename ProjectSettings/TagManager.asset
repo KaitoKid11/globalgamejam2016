@@ -12,6 +12,7 @@ TagManager:
   - PlayerLife
   - ComboNumberText
   - ScoreNumberText
+  - BrightCircle
   layers:
   - Default
   - TransparentFX
