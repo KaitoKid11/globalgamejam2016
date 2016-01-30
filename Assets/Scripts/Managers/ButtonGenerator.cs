@@ -2,15 +2,18 @@
 using System.Collections;
 
 /// <summary>
+/// Enum that indicates on which side on the screen the button is generated.
+/// </summary>
+public enum Side
+{
+    Left,
+    Right
+}
+
+/// <summary>
 /// Manages the button generation.
 /// </summary>
 public class ButtonGenerator : Singleton<ButtonGenerator> {
-
-    private enum Side
-    {
-        Left,
-        Right
-    }
 
     //Reference points to genereate the position of the buttons.
     private GameObject _upLeft;
@@ -111,9 +114,7 @@ public class ButtonGenerator : Singleton<ButtonGenerator> {
         //Generate a side where the button is going to be thrown (0 or 1)
         // 0 -> Left
         // 1 -> Right
-        int side = 0;
-            
-            //_random.NextDouble() >= 0.5 ? 1 : 0;
+        int side = _random.NextDouble() >= 0.5 ? 1 : 0;
 
         Side currentSide = (Side)side;
 
@@ -145,12 +146,14 @@ public class ButtonGenerator : Singleton<ButtonGenerator> {
             double auxPosition = generateRandomNumber(_upLeft.transform.position.y, _downLeft.transform.position.y);
             Vector3 positionLaunch = new Vector3(_upLeft.transform.position.x, (float)auxPosition, 0);
             GameObject button = (GameObject)Instantiate(_launchButton, positionLaunch, Quaternion.identity);
+            button.GetComponent<ButtonMovement>().setButtonSide(currentSide);
         }
         else
         {
             double auxPosition = generateRandomNumber(_upRight.transform.position.y, _downRight.transform.position.y);
             Vector3 positionLaunch = new Vector3(_upRight.transform.position.x, (float)auxPosition, 0);
             GameObject button = (GameObject)Instantiate(_launchButton, positionLaunch, Quaternion.identity);
+            button.GetComponent<ButtonMovement>().setButtonSide(currentSide);
         }
 
         _previousSide = currentSide;
