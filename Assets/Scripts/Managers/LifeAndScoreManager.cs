@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.IO;
+using UnityEngine.UI;
 
 public class LifeAndScoreManager : Singleton<LifeAndScoreManager>
 {
@@ -13,26 +14,33 @@ public class LifeAndScoreManager : Singleton<LifeAndScoreManager>
     string _fileName = "";
     StreamWriter _sr;
 
+    //UIElements
+    GameObject _playerLifeSlider;
+    GameObject _playerLifeUI;
+
     // Use this for initialization
     void Start () {
 
         //Hoghscore File
         createDirectory();
         createFile();
-	}
+        _playerLifeSlider = GameObject.FindGameObjectWithTag("PlayerLife");
+
+        _playerLife = 100;
+    }
 	
 	// Update is called once per frame
 	void Update () {
 	    if(_playerLife <= 0)
         {
-            GameState.Instance.changeState(GameState.GAME_STATES.GAME_STATE_GAME_OVER);
+            //CAMBIAR ESTADO A GAMEOVER
         }
 	}
 
     public void inflictDamage(GameObject button)
     {
         _playerLife -= button.GetComponent<Buttons>()._damage;
-        Destroy(button);
+        _playerLifeUI.GetComponent<Slider>().value = _playerLife;
     }
 
     void createDirectory()
