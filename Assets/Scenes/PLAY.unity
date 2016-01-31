@@ -2101,6 +2101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf8f03ca93195d24db657c88769f052d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _velocity: 0
   _timeVelocityArray:
   - time: 0
     velocity: 1
