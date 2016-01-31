@@ -71,7 +71,12 @@ public class GameState : Singleton<GameState>
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            changeState(GAME_STATES.GAME_STATE_MENU);
+            MusicManagerGlobal.Instance.stopMusic();
+            MusicManagerGlobal.Instance._selectedArray = 1;
+            MusicManagerGlobal.Instance.playMusic(MusicManagerGlobal.Instance._currentMusic, MusicManagerGlobal.Instance._selectedArray);
+            while (MusicManagerGlobal.Instance.gameObject.GetComponent<AudioSource>().isPlaying) { }
+
+           changeState(GAME_STATES.GAME_STATE_MENU);
         }
     }
     private void updateMenu() 

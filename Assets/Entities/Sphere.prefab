@@ -78,15 +78,15 @@ MonoBehaviour:
   _fail: 0
   _target: {fileID: 142378, guid: d5b93cba8da4d48488805249740a90c2, type: 2}
   _maxKeys: 8
-  W: {fileID: 21300000, guid: bc999acc6d835bc4fa8e2065cb993770, type: 3}
-  A: {fileID: 21300000, guid: a25e8153fa5a13149be49d561fa38636, type: 3}
-  S: {fileID: 21300000, guid: 3ce9b067f1dfc6a41b7e2c5d598b0995, type: 3}
-  D: {fileID: 21300000, guid: 7e4311bbf4bcdcc45b2ea70ab9d75e79, type: 3}
-  Up: {fileID: 21300000, guid: f0c9f5309713d6646a39d252f0d9d3bd, type: 3}
-  Left: {fileID: 21300000, guid: bbd17fcef94919f41a79bd5b7ecc0960, type: 3}
-  Down: {fileID: 21300000, guid: 8798902f050dab54dbf78918c84ef9c0, type: 3}
-  Right: {fileID: 21300000, guid: 0541c269c848657448afb66b4e597c02, type: 3}
-  _damage: 0
+  W: {fileID: 21300000, guid: 07e3b0827bcc8dd44947a6ad9594b60c, type: 3}
+  A: {fileID: 21300000, guid: bcb2e27d747c79e48bb2ba1b037ab773, type: 3}
+  S: {fileID: 21300000, guid: bef3fd83a8664874289021070a4eb62d, type: 3}
+  D: {fileID: 21300000, guid: 7ee1e44c5990e3747b8227c5eaa15b80, type: 3}
+  Up: {fileID: 21300000, guid: ec2774f8f9bf1ef4fbb88a0370f5db56, type: 3}
+  Left: {fileID: 21300000, guid: d113344a7c9ed504096e2be8e2c7f281, type: 3}
+  Down: {fileID: 21300000, guid: 07f922a4893bc3840a1f01e9aa0bfec6, type: 3}
+  Right: {fileID: 21300000, guid: c09d06978062da14982b14077ffcbe27, type: 3}
+  _damage: 10
 --- !u!114 &11453392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,9 +118,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -189,7 +187,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: _damage
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -18,7 +18,7 @@ public class VelocityManager : Singleton<VelocityManager> {
     }
 
     // Velocity that the buttons have when launched
-    private float _velocity;
+    public float _velocity;
 
     // Current button movement
     private Movement _movement;
