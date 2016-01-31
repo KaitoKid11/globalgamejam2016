@@ -88,10 +88,7 @@ public class ButtonGenerator : Singleton<ButtonGenerator> {
         _currentSideCounter = 0;
 
         _isActive = true;
-    }
-	
-    void Awake()
-    {
+
         _timeZero = Time.time;
     }
 
