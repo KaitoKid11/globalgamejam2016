@@ -15,7 +15,7 @@ GameObject:
   - 50: {fileID: 5017910}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,7 +86,7 @@ MonoBehaviour:
   Left: {fileID: 21300000, guid: d113344a7c9ed504096e2be8e2c7f281, type: 3}
   Down: {fileID: 21300000, guid: 07f922a4893bc3840a1f01e9aa0bfec6, type: 3}
   Right: {fileID: 21300000, guid: c09d06978062da14982b14077ffcbe27, type: 3}
-  _damage: 10
+  _damage: 100
 --- !u!114 &11453392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -98,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fff51423cc7aa6418ae7dd44e23d1fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sinAmpltude: 0
+  _sinFase: 0
 --- !u!212 &21282594
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -181,6 +183,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 7ee1e44c5990e3747b8227c5eaa15b80,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: _damage
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 104754}

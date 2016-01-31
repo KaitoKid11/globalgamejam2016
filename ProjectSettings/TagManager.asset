@@ -11,6 +11,11 @@ TagManager:
   - Target
   - PlayerLife
   - ComboNumberText
+  - 3
+  - 2
+  - 1
+  - Button
+  - PlayerText
   layers:
   - Default
   - TransparentFX

@@ -8,6 +8,7 @@ public class LifeAndScoreManager : Singleton<LifeAndScoreManager>
     public int _playerLife;
     public float _playerScore;
     private string _name;
+    private GameState _gameState;
 
     //Highscore File
     string _directory = "Output";
@@ -26,13 +27,14 @@ public class LifeAndScoreManager : Singleton<LifeAndScoreManager>
         _playerLifeSlider = GameObject.FindGameObjectWithTag("PlayerLife");
 
         _playerLife = 100;
+        _gameState = GameObject.Find("GameState").GetComponent<GameState>();
     }
 	
 	// Update is called once per frame
 	void Update () {
 	    if(_playerLife <= 0)
         {
-            GameState.Instance.changeState(GameState.GAME_STATES.GAME_STATE_GAME_OVER);
+            _gameState.changeState(GameState.GAME_STATES.GAME_STATE_GAME_OVER);
         }
 	}
 

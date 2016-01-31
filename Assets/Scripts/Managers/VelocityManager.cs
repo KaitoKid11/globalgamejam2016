@@ -33,6 +33,7 @@ public class VelocityManager : Singleton<VelocityManager> {
 	// Use this for initialization
 	void Start () {
         _currentVelocityIndex = 0;
+        //DontDestroyOnLoad(this);
     }
 	
 	// Update is called once per frame

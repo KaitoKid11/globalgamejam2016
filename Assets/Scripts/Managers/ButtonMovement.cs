@@ -40,12 +40,18 @@ public class ButtonMovement : MonoBehaviour {
     // The current movement trayectory.
     private Movement _currentMovement;
 
+    // For countdown porpuose
+    private Vector3 _posWhenCountdown;
+    private bool _takeYourPos;
+    private bool _auxBool;
+
 	// Use this for initialization
 	void Start () {
         _target = GameObject.FindGameObjectWithTag("Target");
 
+        //_velocity = GameObject.Find("MainManager").GetComponent<VelocityManager>().getVelocity();
         _velocity = VelocityManager.Instance.getVelocity();
-
+        //_currentMovement = GameObject.Find("MainManager").GetComponent<VelocityManager>().getMovement();
         _currentMovement = VelocityManager.Instance.getMovement();
 
         _sinAmpltude = 5.0f;
@@ -53,11 +59,11 @@ public class ButtonMovement : MonoBehaviour {
         _sinFase = 3.0f;
 
         _angle = 0;
+
     }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-
         Vector3 direction;
 
         if(_currentMovement == Movement.Sin)
@@ -68,13 +74,15 @@ public class ButtonMovement : MonoBehaviour {
             if (_side == Side.Right)
                 direction *= -1;
 
-            gameObject.transform.position += direction
-                * _velocity * Time.deltaTime;
+            gameObject.transform.position += direction * _velocity * Time.deltaTime;
+
         }
         else if(_currentMovement == Movement.Linear)
         {
+
             gameObject.transform.position += (_target.transform.position - gameObject.transform.position)
             * _velocity * Time.deltaTime;
+
         }
         else if(_currentMovement == Movement.Curve)
         {
@@ -108,5 +116,15 @@ public class ButtonMovement : MonoBehaviour {
     public void setButtonSide(Side side)
     {
         _side = side;
+    }
+
+    public void countdownStart()
+    {
+        _posWhenCountdown = gameObject.transform.position;
+    }
+
+    public void countdownOver()
+    {
+        gameObject.transform.position = _posWhenCountdown;
     }
 }
