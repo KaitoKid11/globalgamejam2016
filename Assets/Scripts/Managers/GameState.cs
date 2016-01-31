@@ -80,7 +80,7 @@ public class GameState : Singleton<GameState>
             {
                 Application.Quit();
             }
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Return))
             {
                 changeState(GAME_STATES.GAME_STATE_PLAY);
             }
@@ -185,23 +185,23 @@ public class GameState : Singleton<GameState>
             }
             else
             {
-                //BROADCAST
-                foreach (GameObject button in GameObject.FindGameObjectsWithTag("Button"))
-                {
-                    button.SendMessage("countdownStart");
-                }
-                Time.timeScale = 0.01f;
-                _pause.SetActive(false);
-                _pauseOn = false;
-                _countdown.SetActive(true);
-                _countdownOn3 = true;
+                changeState(GameState.GAME_STATES.GAME_STATE_MENU);
+                Time.timeScale = 1;
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.End))
+        if (Input.GetKeyDown(KeyCode.Return) && _pauseOn)
         {
-            changeState(GameState.GAME_STATES.GAME_STATE_MENU);
-            Time.timeScale = 1;
+            //BROADCAST
+            foreach (GameObject button in GameObject.FindGameObjectsWithTag("Button"))
+            {
+                button.SendMessage("countdownStart");
+            }
+            Time.timeScale = 0.01f;
+            _pause.SetActive(false);
+            _pauseOn = false;
+            _countdown.SetActive(true);
+            _countdownOn3 = true;
         }
     }
     private void updateGameOver() 
@@ -216,13 +216,13 @@ public class GameState : Singleton<GameState>
             _gameOver.SetActive(true);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             changeState(GAME_STATES.GAME_STATE_PLAY);
             Time.timeScale = 1;
         }
 
-        if (Input.GetKeyDown(KeyCode.End))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             changeState(GameState.GAME_STATES.GAME_STATE_MENU);
             Time.timeScale = 1;

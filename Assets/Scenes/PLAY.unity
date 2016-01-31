@@ -1188,6 +1188,36 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11458706, guid: 8fac2436b32d9734797cfa2190cf2f21, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3139ecd7a76a47d41a76d6e807bbf5f5,
+        type: 3}
+    - target: {fileID: 11458706, guid: 8fac2436b32d9734797cfa2190cf2f21, type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439386, guid: 8fac2436b32d9734797cfa2190cf2f21, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 71029bb27d59fef4ca77d07e4b1c27e5,
+        type: 3}
+    - target: {fileID: 11439386, guid: 8fac2436b32d9734797cfa2190cf2f21, type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11443692, guid: 8fac2436b32d9734797cfa2190cf2f21, type: 2}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476636, guid: 8fac2436b32d9734797cfa2190cf2f21, type: 2}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11443450, guid: 8fac2436b32d9734797cfa2190cf2f21, type: 2}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8fac2436b32d9734797cfa2190cf2f21, type: 2}
   m_IsPrefabParent: 0
