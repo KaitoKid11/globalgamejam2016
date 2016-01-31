@@ -28,8 +28,11 @@ public class ButtonGenerator : Singleton<ButtonGenerator> {
     private System.Random _random;
 
     //Time interval spawn
-    [SerializeField]
     private float _spawnTime;
+    [SerializeField]
+    private double _minSpawnTime;
+    [SerializeField]
+    private double _maxSpawnTime;
     //Acumulated time
     private float _acumulatedTime = 0;
     //Time when the scene was activated
@@ -98,6 +101,10 @@ public class ButtonGenerator : Singleton<ButtonGenerator> {
     /// </summary>
 	void Update () {
         //Debug.Log(generateRandomNumber(_upLeft.transform.position.y,_downLeft.transform.position.y));
+<<<<<<< HEAD
+
+=======
+>>>>>>> kaitoBranch
         if(_isActive && _acumulatedTime < (Time.time - _timeZero))
         {
             generateButton();
@@ -153,6 +160,7 @@ public class ButtonGenerator : Singleton<ButtonGenerator> {
             Vector3 positionLaunch = new Vector3(_upLeft.transform.position.x, (float)auxPosition, 0);
             GameObject button = (GameObject)Instantiate(_launchButton, positionLaunch, Quaternion.identity);
             button.GetComponent<ButtonMovement>().setButtonSide(currentSide);
+            _spawnTime = (float) generateRandomNumber(_maxSpawnTime, _minSpawnTime);
         }
         else
         {
@@ -160,6 +168,7 @@ public class ButtonGenerator : Singleton<ButtonGenerator> {
             Vector3 positionLaunch = new Vector3(_upRight.transform.position.x, (float)auxPosition, 0);
             GameObject button = (GameObject)Instantiate(_launchButton, positionLaunch, Quaternion.identity);
             button.GetComponent<ButtonMovement>().setButtonSide(currentSide);
+            _spawnTime = (float)generateRandomNumber(_maxSpawnTime, _minSpawnTime);
         }
 
         _previousSide = currentSide;

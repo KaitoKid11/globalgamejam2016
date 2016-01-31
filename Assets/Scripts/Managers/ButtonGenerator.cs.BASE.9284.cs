@@ -86,19 +86,17 @@ public class ButtonGenerator : Singleton<ButtonGenerator> {
         _currentSideCounter = 0;
 
         _isActive = true;
-    }
-	
-    void Awake()
-    {
+
         _timeZero = Time.time;
     }
-
+	
 	/// <summary>
     /// Checks if a button has to be generated.
     /// </summary>
 	void Update () {
         //Debug.Log(generateRandomNumber(_upLeft.transform.position.y,_downLeft.transform.position.y));
-        if(_isActive && _acumulatedTime < (Time.time - _timeZero))
+
+        if(_isActive & _acumulatedTime < (Time.time - _timeZero))
         {
             generateButton();
             _acumulatedTime += _spawnTime;

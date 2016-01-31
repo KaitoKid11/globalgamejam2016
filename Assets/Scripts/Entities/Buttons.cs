@@ -30,12 +30,11 @@ public class Buttons : MonoBehaviour {
     public Sprite Right;
 
     //PARA FUTURAS PRUEBAS DE DESARROLLADORES
-    public int _damage = 10;
+    public int _damage;
     //public int _speed;
     
 
     private System.Random _random;
-    private int _speed;
     private KeyCode _buttonToPush;
 
 	// Use this for initialization
