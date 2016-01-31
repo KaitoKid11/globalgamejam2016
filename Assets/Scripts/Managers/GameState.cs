@@ -12,16 +12,18 @@ public class GameState : Singleton<GameState>
     private GameObject _three;
     private GameObject _two;
     private GameObject _one;
+    private GameObject _guru;
     private bool _menuOn;
     private bool _pauseOn;
     private bool _gameOverOn;
     private bool _countdownEnded;
+    private Vector3 _finalPos;
+
+    private int _numSpawned;
 
     private bool _countdownOn3;
     private bool _countdownOn2;
     private bool _countdownOn1;
-    //variable de tiempo para colocar bosses
-    private float _timePlaying;
 
     private GAME_STATES _current; 
 
@@ -39,7 +41,6 @@ public class GameState : Singleton<GameState>
     {
         DontDestroyOnLoad(this);
         GameState.Instance.changeState(GAME_STATES.GAME_STATE_START);
-        //INICIAR MÚSICA DE SCENE START
     }
 
 	void Update () {
@@ -203,6 +204,11 @@ public class GameState : Singleton<GameState>
             _countdown.SetActive(true);
             _countdownOn3 = true;
         }
+
+        if (_numSpawned == 20)
+        {
+
+        }
     }
     private void updateGameOver() 
     {
@@ -210,10 +216,21 @@ public class GameState : Singleton<GameState>
         {
             _gameOver = GameObject.Find("DeadMenuCanvas");
             _gameOver.SetActive(true);
+            foreach (Transform child in _gameOver.transform)
+                foreach (Transform child2 in child.transform)
+                {
+                    if (child2.ToString() == "Guru (UnityEngine.RectTransform)")
+                        _guru = child2.gameObject;
+                }
+            _guru.transform.position += new Vector3(1.5f, 0, 0);
         }
         else
         {
             _gameOver.SetActive(true);
+            if (_guru.transform.position.x <= 280)
+            {
+                _guru.transform.position += new Vector3(1.5f, 0, 0);
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Return))
@@ -239,20 +256,16 @@ public class GameState : Singleton<GameState>
                 {
                     _current = GAME_STATES.GAME_STATE_START;
                 }
-                //CORTAR MÚSICA ACTIVA EN ESTE MOMENTO
-                //INICIAR MÚSICA DE SCENE START
                 break;
             case GAME_STATES.GAME_STATE_MENU:
-                //CORTAR MÚSICA ACTIVA EN ESTE MOMENTO
-                //INICIAR MÚSICA DE SCENE MENU
                 Application.LoadLevel("MENU");
                 _menuOn = true;
                 break;
             case GAME_STATES.GAME_STATE_PLAY:
-                //INICIAR MÚSICA DE SCENE PLAY - LEVEL 1
                 Application.LoadLevel("PLAY");
                 _pauseOn = false;
                 _gameOverOn = false;
+                _numSpawned = 0;
                 if(_pause != null){
                     _pause.SetActive(false);
                 }
@@ -265,6 +278,11 @@ public class GameState : Singleton<GameState>
                 Application.LoadLevel("GAMEOVER");
                 break;
         }
+    }
+
+    public void addSpawned()
+    {
+        _numSpawned += 1;
     }
     #endregion
 }

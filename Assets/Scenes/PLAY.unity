@@ -2032,19 +2032,19 @@ MonoBehaviour:
     movement: 0
   - time: 10
     velocity: .899999976
-    movement: 2
+    movement: 0
   - time: 15
     velocity: 1.5
     movement: 0
   - time: 20
     velocity: 1.20000005
-    movement: 2
+    movement: 0
   - time: 25
     velocity: 1.5
     movement: 0
   - time: 30
     velocity: .5
-    movement: 2
+    movement: 0
 --- !u!114 &1291243067
 MonoBehaviour:
   m_ObjectHideFlags: 0

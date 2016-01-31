@@ -119,6 +119,7 @@ public class ButtonGenerator : Singleton<ButtonGenerator> {
     /// </summary>
     private void generateButton()
     {
+        //GameState.Instance.
         //Generate a side where the button is going to be thrown (0 or 1)
         // 0 -> Left
         // 1 -> Right

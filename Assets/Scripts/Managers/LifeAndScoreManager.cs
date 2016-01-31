@@ -80,20 +80,20 @@ public class LifeAndScoreManager : Singleton<LifeAndScoreManager>
 
         StreamWriter sr = null;
 
-        /*
-        if (File.Exists(_fileName))
-        {
-            Debug.LogWarning("WARNING!! The file " + _fileName + " already exists. Opening it.");
-            FileStream sr1 = File.Open(_fileName, FileMode.Append,FileAccess.ReadWrite);
-        }
-        else
-        {
-            sr = File.CreateText(_fileName);
-            Debug.Log("The file " + _fileName + " was created successfully!!");
-        }
-
-        writeUserData("User Daniel, Score 1000");
-        */
+        
+        //if (File.Exists(_fileName))
+        //{
+        //    Debug.LogWarning("WARNING!! The file " + _fileName + " already exists. Opening it.");
+        //    FileStream sr1 = File.Open(_fileName, FileMode.Append,FileAccess.ReadWrite);
+        //}
+        //else
+        //{
+        //    sr = File.CreateText(_fileName);
+        //    Debug.Log("The file " + _fileName + " was created successfully!!");
+        //}
+        
+        //writeUserData("User Daniel, Score 1000");
+        
 
         return sr;
     }

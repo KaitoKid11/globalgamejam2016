@@ -86,7 +86,7 @@ MonoBehaviour:
   Left: {fileID: 21300000, guid: bbd17fcef94919f41a79bd5b7ecc0960, type: 3}
   Down: {fileID: 21300000, guid: 8798902f050dab54dbf78918c84ef9c0, type: 3}
   Right: {fileID: 21300000, guid: 0541c269c848657448afb66b4e597c02, type: 3}
-  _damage: 10
+  _damage: 100
 --- !u!114 &11453392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -186,6 +186,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _damage
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
