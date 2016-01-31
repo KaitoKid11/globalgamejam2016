@@ -4,23 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - UpLeft
-  - UpRight
-  - DownLeft
-  - DownRight
-  - Target
-  - PlayerLife
-  - ComboNumberText
-<<<<<<< HEAD
-  - ScoreNumberText
-  - BrightCircle
-=======
-  - 3
-  - 2
-  - 1
   - Button
-  - PlayerText
->>>>>>> kaitoBranch
+  - ScoreNumberText
+  - PlayerLife
+  - UpRight
+  - ComboNumberText
+  - DownRight
+  - UpLeft
+  - BrightCircle
+  - DownLeft
+  - Target
   layers:
   - Default
   - TransparentFX

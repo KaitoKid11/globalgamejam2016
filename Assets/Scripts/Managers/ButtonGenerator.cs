@@ -28,8 +28,10 @@ public class ButtonGenerator : Singleton<ButtonGenerator> {
     private System.Random _random;
 
     //Time interval spawn
-    [SerializeField]
     private float _spawnTime;
+
+    public double _minSpawnTime;
+    public double _maxSpawnTime;
     //Acumulated time
     private float _acumulatedTime = 0;
     //Time when the scene was activated
@@ -160,6 +162,7 @@ public class ButtonGenerator : Singleton<ButtonGenerator> {
             Vector3 positionLaunch = new Vector3(_upRight.transform.position.x, (float)auxPosition, 0);
             GameObject button = (GameObject)Instantiate(_launchButton, positionLaunch, Quaternion.identity);
             button.GetComponent<ButtonMovement>().setButtonSide(currentSide);
+            _spawnTime = (float)generateRandomNumber(_minSpawnTime, _maxSpawnTime);
         }
 
         _previousSide = currentSide;
