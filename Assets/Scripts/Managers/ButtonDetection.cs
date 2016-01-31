@@ -35,6 +35,7 @@ public class ButtonDetection : Singleton<ButtonDetection> {
                 GameObject.FindGameObjectWithTag("BrightCircle").GetComponent<SpriteRenderer>().enabled = false;
 
                 LifeAndScoreManager.Instance._playerScore += 100;
+                GameState.Instance.damageToBoss();
 
                 _scoreNumberText.GetComponent<Text>().text = LifeAndScoreManager.Instance._playerScore.ToString();
 

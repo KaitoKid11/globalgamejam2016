@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameState : Singleton<GameState>
 {
@@ -13,11 +14,16 @@ public class GameState : Singleton<GameState>
     private GameObject _two;
     private GameObject _one;
     private GameObject _guru;
+    private GameObject _bossIdle;
+    private GameObject _bossAttack;
+    private GameObject _bossLife;
     private bool _menuOn;
     private bool _pauseOn;
     private bool _gameOverOn;
     private bool _countdownEnded;
+    private bool _bossOn;
     private Vector3 _finalPos;
+    private Vector3 _bossIdleInitialPos;
 
     private int _numSpawned;
 
@@ -104,6 +110,35 @@ public class GameState : Singleton<GameState>
     }
     private void updatePlay() 
     {
+        if (_bossLife == null)
+        {
+            foreach(Transform child in GameObject.Find("Canvas").transform)
+            {
+                if(child.ToString() == "EnemyLife (UnityEngine.RectTransform)")
+                {
+                    _bossLife = child.gameObject;
+                }
+            }
+            _bossLife.SetActive(false);
+        }
+        if (_bossAttack == null && _bossIdle == null)
+        {
+            foreach (Transform child in GameObject.Find("Art").transform)
+            {
+                Debug.Log(child.ToString());
+                if (child.ToString() == "Boss-Iddle (UnityEngine.Transform)") 
+                {
+                    _bossIdle = child.gameObject;
+                } 
+                if (child.ToString() == "Boss-Attack (UnityEngine.Transform)")
+                {
+                    _bossAttack = child.gameObject;
+                }
+            }
+            _bossIdleInitialPos = _bossIdle.transform.position;
+            _bossIdle.SetActive(false);
+            _bossAttack.SetActive(false);
+        }
         if (_pause == null &&_countdown == null)
         {
             _pause = GameObject.Find("PauseMenuCanvas");
@@ -205,9 +240,35 @@ public class GameState : Singleton<GameState>
             _countdownOn3 = true;
         }
 
-        if (_numSpawned == 20)
+        if (_numSpawned == 5 && _bossOn == false)
         {
-
+            _bossOn = true;
+            _bossIdle.SetActive(true);
+            _bossLife.SetActive(true);
+        }
+        if(_bossOn)
+        {
+            if (_bossIdle.transform.position.x > 13f)
+            {
+                _bossIdle.transform.position -= new Vector3(0.1f, 0, 0);
+                //INICIAR NUEVO PATRON
+            }
+            else
+            {
+                _bossIdle.SetActive(false);
+                _bossAttack.SetActive(true);
+            }
+        }
+        if (_bossLife.GetComponent<Slider>().value == 0 && _bossOn)
+        {
+            _bossOn = false;
+            _bossIdle.transform.position = _bossIdleInitialPos;
+            _bossAttack.SetActive(false);
+            _bossLife.SetActive(false);
+            _bossLife.GetComponent<Slider>().value = 100;
+            _numSpawned = 0;
+            //VOLVER A PATRON NORMAL
+            //CAMBIAR CANCIÓN
         }
     }
     private void updateGameOver() 
@@ -283,6 +344,14 @@ public class GameState : Singleton<GameState>
     public void addSpawned()
     {
         _numSpawned += 1;
+    }
+
+    public void damageToBoss()
+    {
+        if (_bossOn)
+        {
+            _bossLife.GetComponent<Slider>().value -= 10;
+        }
     }
     #endregion
 }
