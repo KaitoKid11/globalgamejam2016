@@ -2529,6 +2529,64 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1851237086}
+--- !u!1001 &1853769250
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 11487696, guid: 0d5a117b661da544fbca67f731e38738, type: 2}
+      propertyPath: _effects.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11487696, guid: 0d5a117b661da544fbca67f731e38738, type: 2}
+      propertyPath: _globalMusic.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 407722, guid: 0d5a117b661da544fbca67f731e38738, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 407722, guid: 0d5a117b661da544fbca67f731e38738, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 407722, guid: 0d5a117b661da544fbca67f731e38738, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 407722, guid: 0d5a117b661da544fbca67f731e38738, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 407722, guid: 0d5a117b661da544fbca67f731e38738, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 407722, guid: 0d5a117b661da544fbca67f731e38738, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 407722, guid: 0d5a117b661da544fbca67f731e38738, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 407722, guid: 0d5a117b661da544fbca67f731e38738, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11487696, guid: 0d5a117b661da544fbca67f731e38738, type: 2}
+      propertyPath: _effects.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0b27f3740f549ce4a86a27c15a6c8a80, type: 3}
+    - target: {fileID: 11487696, guid: 0d5a117b661da544fbca67f731e38738, type: 2}
+      propertyPath: _globalMusic.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0b27f3740f549ce4a86a27c15a6c8a80, type: 3}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0d5a117b661da544fbca67f731e38738, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1858796063
 GameObject:
   m_ObjectHideFlags: 0
